@@ -47,7 +47,7 @@ const addAuditLogObject = (currentObject, original) => {
       itemId: currentObject._id,
       itemName: currentObject.constructor.modelName,
       changes: changes.reduce((obj, change) => {
-        const key = change.path.join('.');
+        const key = change.path.join('_');
         if (change.kind === 'D') {
           handleAudits(change.lhs, 'from', types.delete, obj, key);
         } else if (change.kind === 'N') {
@@ -91,7 +91,7 @@ const handleAudits = (changes, target, type, obj, key) => {
       // sibling/sub-object
       Object.entries(changes).forEach(([sub, value]) => {
         if (!isEmpty(value)) {
-          obj[`${key}.${sub}`] = { [target]: value, type };
+          obj[`${key}_${sub}`] = { [target]: value, type };
         }
       });
     }
