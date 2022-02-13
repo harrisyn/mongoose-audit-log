@@ -1,11 +1,11 @@
-# mongoose-audit-log
+# mongoose-audit-logger
 
-**mongoose-audit-log** is a mongoose plugin to manage an audit log of changes to the MongoDB database.
+**mongoose-audit-logger** is a mongoose plugin to manage an audit log of changes to the MongoDB database (forked from @ccanow/mongoosee-audit-log.
 
 ## Install
 
 ```bash
-npm install mongoose-audit-log
+npm install mongoose-audit-logger
 ```
 
 ## Features
@@ -35,7 +35,7 @@ Order.findById(123)
 2. Override the getUser-handler on application start:
 ```javascript
 // [audit.js] required on startup (e.g. in the server.js/app.js)
-const auditLog = require('mongoose-audit-log').plugin;
+const auditLog = require('mongoose-audit-logger').plugin;
 // the userContext is a request-bound object, that is updated before the request is handled by a controller/route
 const userContext = require('./passport').userContext;
 
@@ -59,7 +59,7 @@ Order.findById(123)
 Please find below an example route, to request the history of a given type and id:
 
 ```javascript
-const Audit = require('mongoose-audit-log').model;
+const Audit = require('mongoose-audit-logger').model;
 const User = require('../models/User');
 
 router.get('/api/users/:id/history', (req, res, next) => {
