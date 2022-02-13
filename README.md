@@ -1,6 +1,6 @@
 # mongoose-audit-logger
 
-**mongoose-audit-logger** is a mongoose plugin to manage an audit log of changes to the MongoDB database (forked from @ccanow/mongoosee-audit-log.
+**mongoose-audit-logger** is a mongoose plugin to manage an audit log of changes to the MongoDB database (forked from @ccanow/mongoosee-audit-log).
 
 ## Install
 
