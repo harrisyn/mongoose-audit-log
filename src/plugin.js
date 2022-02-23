@@ -83,7 +83,7 @@ const addAuditLogObject = (currentObject, original) => {
 };
 
 const handleAudits = (changes, target, type, obj, key) => {
-  if (typeof changes === 'object') {
+  if (typeof changes === 'object' && changes !== null) {
     if (Object.keys(changes).filter(key => key === '_id' || key === 'id').length) {
       // entity found
       obj[key] = { [target]: changes, type };
