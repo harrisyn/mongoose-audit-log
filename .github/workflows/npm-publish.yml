@@ -28,7 +28,6 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm publish
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_SECRET }}
