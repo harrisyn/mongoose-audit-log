@@ -4,6 +4,7 @@ const auditSchema = new mongoose.Schema({
   itemName: String,
   itemId: {},
   changes: {},
+  originalDocument: {},
   user: {}
 }, { timestamps: true });
 
