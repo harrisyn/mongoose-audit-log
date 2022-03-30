@@ -76,6 +76,7 @@ const addAuditLogObject = (currentObject, original) => {
         }
         return obj;
       }, {}),
+      originalDocument: JSON.stringify(obj),
       user
     }).save();
   }
